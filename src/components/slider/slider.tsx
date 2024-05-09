@@ -22,9 +22,8 @@ export const Slider = ({ initSlide }: { initSlide: number }) => {
       pagination={{ clickable: true }}
       mousewheel={true}
       loop
-      style={{ maxWidth: '1052px', width: '100%', height: '100%' }}
     >
-      {[slide1, slide2, slide3].map((slide, i) => (
+      {[slide1, slide2, slide3, slide1, slide2, slide3].map((slide, i) => (
         <SwiperSlide key={i}>
           <Image src={slide} alt={'slide_' + i} placeholder='blur' />
         </SwiperSlide>

@@ -1,5 +1,8 @@
 'use client';
 
+import { ChangeEvent } from 'react';
+import { UseFormRegister } from 'react-hook-form';
+
 import {
   InputGroup,
   Input,
@@ -12,7 +15,6 @@ import {
   FlagImage,
   usePhoneInput,
 } from 'react-international-phone';
-import { UseFormRegister } from 'react-hook-form';
 
 type TProps = {
   register: UseFormRegister<FormValues>;
@@ -25,6 +27,15 @@ export const MobilePhoneInput = ({ register, isInvalid }: TProps) => {
     countries: defaultCountries,
   });
 
+  const buildedRegister = register('mobile', { required: true });
+
+  const handleInput = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    buildedRegister.onChange(e);
+    handlePhoneValueChange(e);
+  };
+
   return (
     <InputGroup>
       <InputLeftElement w='fit-content' h='100%'>
@@ -36,14 +47,15 @@ export const MobilePhoneInput = ({ register, isInvalid }: TProps) => {
       </InputLeftElement>
 
       <Input
-        {...register('mobile', { required: true })}
+        {...buildedRegister}
+        maxLength={19}
         type='tel'
         h={{ base: '50px', xl: '60px' }}
         borderColor='#333333'
         variant='flushed'
         isInvalid={isInvalid}
         value={inputValue}
-        onChange={handlePhoneValueChange}
+        onChange={handleInput}
       />
 
       <InputRightElement w='fit-content' h='100%' fontSize='18px'>

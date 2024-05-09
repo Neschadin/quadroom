@@ -1,6 +1,11 @@
-import { Box, ButtonProps, Center } from '@chakra-ui/react';
+import { Box, ButtonProps, Center, Spinner } from '@chakra-ui/react';
 
-export const MainButton = ({ children, variant, ...rest }: ButtonProps) => {
+export const MainButton = ({
+  children,
+  variant,
+  isLoading,
+  ...rest
+}: ButtonProps) => {
   const isSolid = variant === 'solid';
   const translate3d = `translate3d(0, ${isSolid ? '-100%' : '100%'}, 0)`;
 
@@ -53,7 +58,7 @@ export const MainButton = ({ children, variant, ...rest }: ButtonProps) => {
       }}
       {...rest}
     >
-      <Center>{children}</Center>
+      <Center>{isLoading ? <Spinner /> : children}</Center>
     </Box>
   );
 };

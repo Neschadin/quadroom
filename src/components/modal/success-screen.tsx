@@ -3,7 +3,7 @@ import { Center, Text, VStack } from '@chakra-ui/react';
 
 export const SuccessScreen = ({ message }: { message: string }) => {
   return (
-    <Center w='100%' h='538px'>
+    <Center w='100%' h={{ base: 'auto', md: '448px' }}>
       <VStack gap='40px'>
         <ThumbIcon />
 

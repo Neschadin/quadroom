@@ -14,18 +14,18 @@ import { useTransition } from 'react';
 export const ConsultForm = () => {
   const {
     register,
-    formState: { errors },
+    formState: { errors, isValid },
   } = useForm<FormValues>({
     mode: 'onChange',
     resolver: zodResolver(formSchema),
   });
 
+  const [pending, startTransaction] = useTransition();
   const [state, formAction] = useFormState<ActionState, FormData>(
     submitFormData,
     null
   );
 
-  const [pending, startTransaction] = useTransition();
   const onSubmit = (formData: FormData) =>
     startTransaction(() => formAction(formData));
 
@@ -77,7 +77,8 @@ export const ConsultForm = () => {
             variant='solid'
             mb='10px'
             type='submit'
-            disabled={pending}
+            disabled={pending || !isValid}
+            isLoading={pending}
           >
             Submit
           </MainButton>

@@ -1,5 +1,5 @@
-export { SliderComponent } from './slider-component/slider-component';
-export { AccordionItemExt } from './accordion-components/accordion-item-ext';
-export { AccordionPanelExt } from './accordion-components/accordion-panel-ext';
-export { ContentBlock } from './accordion-components/content-block';
+export { Slider } from './slider/slider';
+export { AccordionItemExt } from './accordion-block/accordion-item-ext';
+export { AccordionPanelExt } from './accordion-block/accordion-panel-ext';
+export { ContentBlock } from './accordion-block/content-block';
 export { Modal } from './modal/modal';

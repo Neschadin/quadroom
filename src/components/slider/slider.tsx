@@ -13,7 +13,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import './styles.css';
 
-export const SliderComponent = ({ initSlide }: { initSlide: number }) => {
+export const Slider = ({ initSlide }: { initSlide: number }) => {
   return (
     <Swiper
       initialSlide={initSlide}

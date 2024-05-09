@@ -1,5 +1,5 @@
 import { AccordionPanel, Stack, VStack } from '@chakra-ui/react';
-import { SliderComponent } from '../slider-component/slider-component';
+import { Slider } from '../slider/slider';
 import { ContentBlock } from './content-block';
 import { ButtonsBlock } from './buttons-block';
 
@@ -9,7 +9,7 @@ export const AccordionPanelExt = ({ data, initSlide }: TProps) => {
   return (
     <AccordionPanel p={0}>
       <Stack gap='40px' direction={{ base: 'column', lg: 'row' }}>
-        <SliderComponent initSlide={initSlide} />
+        <Slider initSlide={initSlide} />
 
         <VStack
           alignItems='stretch'

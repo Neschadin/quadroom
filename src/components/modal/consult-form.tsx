@@ -6,9 +6,9 @@ import { useForm } from 'react-hook-form';
 import { submitFormData } from './api/form-action';
 import { formSchema } from './utils/validation';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { MobilePhoneInput } from './components/mobile-phone-input';
+import { MobilePhoneInput } from '../../ui/mobile-phone-input';
 import { MainButton } from '@/src/ui';
-import { SuccessScreen } from './utils/success-screen';
+import { SuccessScreen } from './success-screen';
 import { useTransition } from 'react';
 
 export const ConsultForm = () => {
